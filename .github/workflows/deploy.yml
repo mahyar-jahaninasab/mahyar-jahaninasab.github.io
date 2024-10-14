@@ -18,10 +18,13 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v1
+      - name: Install Node.js
+        uses: actions/setup-node@v2
         with:
-          version: 9.12.1
+          node-version: '16'
+
+      - name: Install pnpm
+        run: npm install -g pnpm@9.12.1
 
       - name: Install dependencies
         run: pnpm install
