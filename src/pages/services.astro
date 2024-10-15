@@ -1,40 +1,39 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-
-<BaseLayout title="Projects" sideBarActiveItemID="services">
+<BaseLayout title="Services" sideBarActiveItemID="services">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Services Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Services Offered</div>
+    <hr style="margin-top: 10px; border: 2px solid blue;">
   </div>
-
   <HorizontalCard
-    title="Service 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Advanced Predictive Analytics"
+    img="/leverge.webp"
+    desc="Leverage advanced machine learning models to forecast critical metrics in various industries, enhancing predictive maintenance and decision-making processes."
     badge="NEW"
     url="#"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Service 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Scientific Machine Learning Solutions"
+    img="/scientific.webp"
+    desc="Develop custom machine learning algorithms tailored to scientific research, driving innovation and accelerating discoveries in fields like physics, biology, and chemistry."
     url="#"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Service 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Data Science Consulting"
+    img="/Consulting.webp"
+    desc="Provide expert guidance on data collection, analysis, and interpretation to maximize the value of your data and inform strategic decisions."
     url="#"
     badge="NEW"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Service 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="AI Model Optimization"
+    img="/CNN.webp"
+    desc="Optimize and fine-tune machine learning models to improve accuracy, efficiency, and scalability, ensuring they deliver the best possible performance."
     url="#"
   />
 </BaseLayout>

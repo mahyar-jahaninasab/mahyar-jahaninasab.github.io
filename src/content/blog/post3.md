@@ -1,57 +1,115 @@
 ---
-title: "Demo Post 3"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 12 2022"
-heroImage: "/post_img.webp"
-badge: "Demo badge"
-tags: ["rust","tokio"]
+title: "Adapter for fine tuning LLM"
+description: "Creating a patch for integrating adapter modules into the RoBERTa model allows for efficient fine-tuning tailored to specific tasks. By embedding lightweight adapters within the pre-trained layers of RoBERTa, we can freeze the majority of the original parameters, updating only the new adapter parameters. This approach significantly reduces computational overhead and speeds up training. Implementing this patch involves defining the adapter architecture, integrating it within RoBERTa, and focusing the training on these adapters to leverage pre-existing knowledge effectively. Don't forget to check the source code!"
+pubDate: "Sep 25 2024"
+heroImage: "/adapter.webp"
+badge: "OSS"
+tags: ["pytorch","AI"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
+**Access the project in:** [here](https://github.com/mahyar-jahaninasab/DL_codes/tree/main/Transformers/adapter-patch)
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum
-quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet.
-Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus.
-Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit
-ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt
-dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus
-arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed
-tempus urna et pharetra pharetra massa massa ultricies mi.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam
-sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec.
-Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna
-fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et
-egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel
-turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra
-nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim
-praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam
-ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor
-purus non. Amet dictum sit amet justo donec enim.
+# Adapter Modules: A Detailed Exploration
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut
-consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
-Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor
-dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor
-dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque
-eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices
-tincidunt arcu. Id cursus metus aliquam eleifend mi.
+In the bustling realm of deep learning, particularly within the scope of natural language processing (NLP), adapter modules have emerged as game-changers. These ingenious tools offer a streamlined approach to fine-tuning pre-trained models for various downstream tasks, eliminating the need for exhaustive retraining. In this blog, we'll dive deep into the essence of adapter modules, their advantages, and their seamless integration into transformer models, with a spotlight on the **RobertaForSequenceClassification** model.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt
-dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat
-sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.
-Egestas integer eget aliquet nibh praesent tristique magna.
+## What Are Adapter Modules?
+
+Adapters are compact neural networks embedded within the layers of a pre-trained model. They enable the model to specialize in particular tasks while maintaining the majority of the original model parameters intact, thereby reducing computational demands and the volume of training data required.
+
+## Key Benefits
+
+- **Efficiency:** Adapter modules drastically cut down the computational load for training.
+- **Flexibility:** They facilitate the adaptation of a single model to multiple tasks with ease.
+- **Memory Saving:** By introducing only a handful of additional parameters, adapters save memory compared to training an entire model from scratch.
+
+## Integration of Adapters in the Roberta Model
+
+To grasp how adapters function, let's explore their integration within the **RobertaForSequenceClassification** model. This section will break down the model's core components and elucidate where adapters fit in:
+
+## Model Architecture
+
+The **RobertaForSequenceClassification** model is based on the **RoBERTa** (Robustly optimized BERT approach) architecture, featuring several key components:
+
+- **Embeddings:** Converts input tokens into dense vectors.
+- **Encoder:** Processes these vectors through multiple layers of self-attention and feed-forward networks.
+- **Classifier Head:** Maps the encoded representations to the desired output (e.g., class labels).
+
+### Example Code Structure (Conceptual Explanation Only)
+
+#### Embedding Layer
+
+- Converts words and positions into embeddings.
+- Employs techniques like layer normalization and dropout.
+
+#### Encoder Layer
+
+- Comprises multiple sub-layers, including self-attention and feed-forward layers.
+- Integrates adapters within the self-attention and output layers to tailor the network for specific tasks.
+
+#### Classification Head
+
+- Applies a dense layer followed by dropout for the final classification task.
+
+## Detailed Explanation
+
+- **Adapters in Self-Attention Layers:** The self-attention mechanism is pivotal in learning the interrelations between words in a sentence. Adapters tweak the self-attention output to better align with specific tasks.
+- **Adapters in Output Layers:** Output layers incorporate adapters to fine-tune the dense representation for the final output, allowing the model to harness pre-trained knowledge while adapting to new data.
+
+### Sample Adapter Integration
+
+Although we're not including executable code here, here's a conceptual overview:
+
+```python
+class Adapter(nn.Module):
+    def __init__(self, input_dim, adapter_dim):
+        super(Adapter, self).__init__()
+        self.linear1 = nn.Linear(input_dim, adapter_dim)
+        self.linear2 = nn.Linear(adapter_dim, input_dim)
+
+    def forward(self, x):
+        out = F.relu(self.linear1(x))
+        out = self.linear2(out)
+        return out + x  # Residual connection
+```
+
+        
+Freeze Base Model Parameters:
+
+```python
+for name, param in model.named_parameters():
+    if 'adapter' in name:
+        param.requires_grad = True
+    else:
+        param.requires_grad = False
+```
+
+## Practical Example: Sentiment Analysis with RoBERTa and Adapters
+
+To put this into perspective, imagine fine-tuning a RoBERTa model for a sentiment analysis task:
+
+- **Dataset Preparation**
+Load and preprocess a dataset (e.g., IMDB reviews).
+
+- **Model Preparation**
+Insert adapters within the model architecture.
+
+Freeze the parameters of the base model.
+
+- **Training**
+Train only the adapter parameters using a task-specific loss function (e.g., cross-entropy for classification tasks).
+
+- **Evaluation**
+Assess the model's performance on a test dataset to ensure it has adapted to the new task effectively.
+
+- **Data Preprocessing**
+For sentiment analysis, you would typically preprocess the text data, tokenize it using a suitable tokenizer (like AutoTokenizer from Hugging Face), and then prepare it for training.
+
+- **Adapter Training**
+Once the data is ready, the training process focuses on updating the adapter parameters while keeping the rest of the model parameters frozen. This ensures that the model can leverage pre-trained knowledge while adapting efficiently to new tasks.
+
+- **Conclusion**
+Adapter modules provide an efficient and flexible approach to model fine-tuning. They help in leveraging the power of pre-trained models while significantly reducing the computational and data requirements. Inserting adapters in models like RobertaForSequenceClassification allows for effective adaptation to a wide range of downstream tasks, making them a powerful tool in the NLP toolkit.
+
+

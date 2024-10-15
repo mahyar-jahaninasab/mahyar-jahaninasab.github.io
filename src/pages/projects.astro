@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
@@ -9,18 +9,18 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Enhancing PINN Generalization for Unseen Domains and Chaotic Parameters"
+    img="/lightbulb.webp"
+    desc="At present, we are advancing algorithms derived from geometric deep learning, integrating them with physics-informed loss functions. This innovative approach aims to enhance the accuracy of model predictions during the inference phase, paving the way for more precise and reliable results for unseen geometries."
     url="#"
-    badge="NEW"
+    badge="On Going"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Redesigning RNNs for Fully Physics-Informed Loss Function"
+    img="/MIRNN.webp"
+    desc="Training Recurrent Neural Networks (RNNs) solely through physics-informed loss functions presents significant challenges,  necessitating numerical derivatives between blocks. In this work, we introduce structural modifications to RNNs that eliminate the dependency on numerical derivatives, allowing for the formation of purely physics-informed loss functions using backpropagation. The archived version of this paper is currently accessible, with the source code set for release upon official publication."
+    url="https://arxiv.org/abs/2409.10388"
   />
 
   <div>
@@ -28,13 +28,13 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   </div>
 
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Enhancing Convergence Speed of PINN"
+    img="/sakhtar.webp"
+    desc="Streamline your training with PINNs! Dive into our newly published paper and access the source code to double the convergence speed and boost the success rate of your Physics-Informed Neural Networks."
+    url="https://github.com/mahyar-jahaninasab/Feature-Enforcing-PINN"
+    badge="OSS"
   />
-  <div class="divider my-0"></div>
+  <!-- <div class="divider my-0"></div>
   <HorizontalCard
     title="Demo Project 4"
     img="/post_img.webp"
@@ -47,5 +47,5 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     img="/post_img.webp"
     desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     url="#"
-  />
+  /> -->
 </BaseLayout>

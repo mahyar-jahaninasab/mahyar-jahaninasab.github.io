@@ -1,56 +1,46 @@
 ---
-title: "Demo Post 1"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
-heroImage: "/post_img.webp"
-tags: ["tokio"]
+title: "Image Generation using Generative Models"
+description: "Dive into the fascinating world of generative models in this project, where we explore the unique strengths and weaknesses of three powerful models: Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), and Denoising Diffusion Probabilistic Models (DDPMs). Don't forget to check the source code!"
+pubDate: "Sep 1 2024"
+heroImage: "/generative.webp"
+badge: "OSS"
+tags: ["pytorch"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
+**Access the project in:** [here](https://github.com/mahyar-jahaninasab/DL_codes/blob/main/Generative_models/Generative_Models%20-.ipynb)
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum
-quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet.
-Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus.
-Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit
-ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt
-dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus
-arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed
-tempus urna et pharetra pharetra massa massa ultricies mi.
+**Blog: Enhancing Image Generation with Advanced Models**
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam
-sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec.
-Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna
-fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et
-egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel
-turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra
-nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim
-praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam
-ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor
-purus non. Amet dictum sit amet justo donec enim.
+In this blog, we're diving deep into the world of advanced models and their applications, using the FashionMNIST dataset as our playground. FashionMNIST consists of a training set of 60,000 examples and a test set of 10,000 samples. Each sample is a 28x28 grayscale image associated with a label from 10 classes. We'll use the training split in this notebook. You can also use tools like `plot_samples` to visualize a sequence of images, such as iteratively denoised images by DDPM.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut
-consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
-Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor
-dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor
-dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque
-eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices
-tincidunt arcu. Id cursus metus aliquam eleifend mi.
+**Variational Autoencoder (VAE)**
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt
-dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat
-sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.
-Egestas integer eget aliquet nibh praesent tristique magna.
+VAE is a generative model that consists of an encoder and a decoder network. The encoder maps the input data into a latent space represented by probability distributions, while the decoder generates output data from samples of the latent space. VAE is trained using a variational inference approach with the objective to maximize the evidence lower bound (ELBO) of the data's log-likelihood. The ELBO includes two main components: the **reconstruction loss**, which measures how well the decoder can reconstruct the input data, and the **KL divergence** between the prior (Gaussian) and posterior distributions over the latent space. The encoder learns the mean and variance of this distribution, and the reparameterization trick is used for sampling from the encoder.
+
+**Generative Adversarial Networks (GAN)**
+
+GAN's architecture involves a Discriminator and a Generator. The Discriminator determines whether an input image is real or generated by the Generator. The Generator, on the other hand, creates fake images from random noise such that the Discriminator cannot distinguish them from real images. This adversarial dynamic results in the standard min-max loss for GANs, where the Generator attempts to minimize the loss while the Discriminator aims to maximize it. Each network optimizes its parameters alternately, with the Discriminator focusing on distinguishing real from fake images, and the Generator trying to fool the Discriminator.
+
+**Denoising Diffusion Probabilistic Models (DDPM)**
+
+DDPMs generate images by progressively denoising a completely random pattern in a step-by-step process. The model learns diffusion steps to describe noise evolution over time and employs a neural network as a denoising function at each step. By iteratively removing noise, DDPMs can generate images from the training distribution. The training and sampling processes in DDPM involve complex procedures that are detailed in the original DDPM paper.
+
+**Training and Implementation**
+
+For our experiments, we'll use the FashionMNIST dataset and implement various models, such as VAE and GAN, to explore their effectiveness in image generation tasks. Additionally, we’ll look into the use of DDPMs for generating high-quality images from noisy patterns.
+
+**Variational Autoencoder**
+
+The VAE consists of an encoder and a decoder. The encoder compresses the input images into a latent representation, while the decoder reconstructs the images from this latent space. The VAE model is trained by minimizing the **reconstruction loss** and the **KL divergence** between the latent space and the prior distribution.
+
+**Generative Adversarial Network**
+
+The GAN model includes a Generator that produces images and a Discriminator that evaluates them. The training process involves optimizing the min-max loss function, where the Generator tries to create realistic images and the Discriminator strives to correctly classify real and fake images.
+
+**Denoising Diffusion Probabilistic Models**
+
+DDPMs work by iteratively denoising a random input. The model learns a set of diffusion steps that describe the noise process and a denoising function to reverse it. Training DDPMs involves optimizing the denoising function to accurately reconstruct images at each step.
+
+**Conclusion**
+
+These advanced models offer powerful tools for image generation tasks. By leveraging the FashionMNIST dataset, we can explore the capabilities of VAE, GAN, and DDPM, each providing unique approaches to generating high-quality images. Our journey through these models will showcase their strengths, implementation details, and potential applications in various fields.

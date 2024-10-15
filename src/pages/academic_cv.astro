@@ -1,0 +1,265 @@
+---
+import TimeLineElement from "../components/cv/TimeLine.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Resume" sideBarActiveItemID="academic_cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+    <hr style="margin-top: 10px; border: 2px solid blue;">
+  </div>
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="M.Sc. in Mechanical Engineering"
+      subtitle="2022 to 2024 at Sharif University of Technology, Tehran, Iran"
+    >
+      <div>Cumulative GPA: 18.13/20 (3.88/4.0) (GPA of the field 16.88/20)</div>
+      <div>Thesis title: Enhancing Training Time and Accuracy of Physics-Informed Neural Networks</div>
+    </TimeLineElement>
+    <TimeLineElement
+      title="B.Sc. in Mechanical Engineering"
+      subtitle="2017 to 2022 at Imam Khomeini International University, Qazvin, Iran"
+    >
+      <div>Last two years' GPA: 16.73/20 (3.49/4.0)</div>
+      <div>Cumulative GPA: 15.73/20 (3.22/4.0) (GPA of the field 14.73/20)</div>
+      <div>Thesis title: A Novel Approach for Reducing Feature Space Dimensionality and Develop a Universal Machine-Learning Model for Coated Tubes in Cross Flow Heat Exchangers</div>
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5 research-interests-section" style="margin-top: 50px;">
+    <div class="text-3xl w-full font-bold">Research Interests</div>
+    <hr style="margin-top: 10px; border: 2px solid blue;">
+  </div>
+  <div class="mx-6">
+    <div class="skills-container">
+      <div class="skill-box">Deep Learning</div>
+      <div class="skill-box">AI for science</div>
+      <div class="skill-box">Scientific Machine Learning</div>
+      <div class="skill-box">Turbulence</div>
+      <div class="skill-box">Generalization</div>
+      <div class="skill-box">Physics Informed Neural Networks</div>
+    </div>
+  </div>
+  
+  <style>
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-box {
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.144);
+      width: calc(50% - 10px); /* Adjust width as needed */
+    }
+  </style>
+  
+
+<div class="mb-5 selected-courses-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Selected Courses from the Computer Science Department</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<ul class="list-disc mx-6">
+  <li style="display: inline-block; margin-right: 40px;">Machine Learning: 19/20</li>
+  <li style="display: inline-block;">Deep Learning: 18.5/20</li>
+</ul>
+
+
+
+
+
+<div class="mb-5 publications-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Publications</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<ul class="list-disc mx-6">
+  <li>
+    <strong>Mahyar  Jahani-nasab</strong>, Mohamad Ali Bijarchi. "Revising the Structure of Recurrent Neural Networks to Eliminate Numerical Derivatives in Forming Physics Informed Loss Terms with Respect to Time" (Submitted) – (Derived from Master’s Thesis)
+  </li>
+  <li>
+    <strong>Mahyar  Jahani-nasab</strong>, Bijarchi Mohammad Ali, Enhancing convergence speed with feature enforcing physics-informed neural networks using boundary conditions as prior knowledge. Sci Rep 14, 23836 (2024).” (Derived from Master's Thesis)
+  </li>
+  <li>
+    <strong>Mahyar Jahaninasab</strong>, Ehsan Taheran, S. Alireza Zarabadi, Mohammadreza Aghaei, and Ali Rajabpour. "A Novel Approach for Reducing Feature Space Dimensionality and Developing a Universal Machine Learning Model for Coated Tubes in Cross-Flow Heat Exchangers." Energies 16, no. 13 (2023): 5185. (Derived from Bachelor’s Thesis)
+  </li>
+  <li>
+    Mohsen Rezaeian, Yaser Bahari, Davood Bandi, Arash Montazeri, <strong>Mahyar Jahaninasab</strong>, and Ali Rajabpour. "Thermal conductivity of boronated-holey graphene under mechanical strain: Insights from molecular dynamics." Physica B: Condensed Matter 693 (2024): 416400. (Role: Research Assistant (RA) - Analyzing Data Using Machine Learning)
+  </li>
+  <li>
+    Mirmahmoud Seyedi, Mohammad Mahdi Dodangeh, <strong>Mahyar Jahani-nasab</strong>, Mohamad Ali Bijarchi, Mohammad Behshad Shafii "Optimization of Heat Transfer and Pressure Drop in a Corrugated Channel Using Pattern Search and Neural Network with Different Arc Configurations for a Turbulent Flow" (Submitted) (Role: RA - Training Machine Learning Models and Writing)
+  </li>
+</ul>
+
+
+<div class="mb-5 teaching-experiences-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Teaching Experiences (TA)</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<ul class="list-disc mx-6">
+  <li>
+    <div style="display: flex; justify-content: space-between;">
+      <span>Inverse Heat Transfer, Sharif University of Technology</span>
+      <span>Fall semester 2024-2025</span>
+    </div>
+    <div>Responsibilities: Delivered lectures on Parametric PINNs, Shape Optimization, physics-informed CNNs</div>
+    <div>Teaching Assistant, Instructor: Dr. Mohamad Ali Bijarchi</div>
+  </li>
+  <li>
+    <div style="display: flex; justify-content: space-between;">
+      <span>Renewable Energy, Sharif University of Technology</span>
+      <span>Spring semester 2023-2024, Fall semester 2024-2025</span>
+    </div>
+    <div>Teaching Assistant, Instructor: Dr. Mohamad Ali Bijarchi</div>
+  </li>
+  <li>
+    <div style="display: flex; justify-content: space-between;">
+      <span>Radiation, Sharif University of Technology</span>
+      <span>Spring semester 2023-2024</span>
+    </div>
+    <div>Teaching Assistant, Instructor: Dr. Mohamad Ali Bijarchi</div>
+  </li>
+</ul>
+
+
+<div class="mb-5 research-experiences-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Research Experiences (RA)</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<ul class="list-disc mx-6">
+  <li style="display: flex; justify-content: space-between; list-style-position: inside;">
+    <span>Graduate Research Assistant for Dr. M.A. Bijarchi at AI Applications in Fluid Mechanics Lab., Department of Mechanical Engineering, Sharif University of Technology</span>
+    <span>2022-2024</span>
+  </li>
+  <ul class="list-disc mx-6">
+    <li>Reducing Required Domain Points for Efficient Training of PINNs</li>
+    <li>Inverse Design of Turbulent Impinging Jets Using Parametric PINNs</li>
+    <li>Uncertainty Quantification using (Dropout+Neural Networks) & (GANs) for the Burger Equation</li>
+    <li>Exploring Applications of Physics-Informed Convolutional Neural Networks (CNNs) in MRI</li>
+    <li>Guiding Graduate Students on the Application of PINNs in Their Research</li>
+  </ul>
+  <li style="display: flex; justify-content: space-between; list-style-position: inside;">
+    <span>Undergraduate Research Assistant for Dr. A. Rajabpour at Advanced Simulation and Computing Laboratory (ASCL), Imam Khomeini International University, Qazvin, Iran</span>
+    <span>2020-2024</span>
+  </li>
+  <ul class="list-disc mx-6">
+    <li>Developed and trained machine learning models using diverse datasets from various laboratories, demonstrating adaptability and proficiency in handling different types of data</li>
+    <li>Conducted an in-depth study of various machine learning-based Molecular Dynamics Interatomic packages. Identified gaps and opportunities to innovate and create a new, more efficient package</li>
+    <li>Authored a comprehensive review paper on the generalization capability of PINNs. (The draft version is currently available)</li>
+  </ul>
+</ul>
+
+
+<div class="mb-5 selected-ai-projects-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Selected AI Projects</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<ul class="list-disc mx-6">
+  <li>
+    Developed a CNN and U-Net project for image classification and segmentation on the CARLA dataset. 
+  </li>
+  <li>
+    Built VAEs, GANs, and DDPMs from scratch, with DDPMs outperforming the others in image generation. 
+  </li>
+  <li>
+    Created a patch for adding an adapter to RoBERTa, improving training accuracy and convergence speed. 
+  </li>
+  <li>
+    Used beam search and fixed-length truncation for backpropagation to train a character RNN on the Harry Potter series. 
+  </li>
+  <li>
+    Implemented image captioning with Hugging Face by combining ViT and DistilGPT-2. 
+  </li>
+  <li>
+    The BYOL method was implemented to compare the results of a classification task before and after pretraining the model with BYOL, demonstrating an improvement in the training process. 
+  </li>
+  <li>
+    OpenAI's CLIP model was used for zero-shot learning in recognizing objects. 
+  </li>
+</ul>
+
+
+<div class="mb-5 honors-awards-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Honors and Awards</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<ul class="list-disc mx-6">
+  <li style="display: flex; justify-content: space-between; list-style-position: inside;">
+    <span>Granted a merit-based admission to the graduate program (M.Sc.) as an “Exceptionally Talented Student”, School of Mechanical Engineering, Imam Khomeini International University</span>
+    <span>2021</span>
+  </li>
+  <li style="display: flex; justify-content: space-between; list-style-position: inside;">
+    <span>Ranked 36th among +10,000 participants in the national entrance exam for the Master’s program in Mechanical Engineering</span>
+    <span>2022</span>
+  </li>
+  <li style="display: flex; justify-content: space-between; list-style-position: inside;">
+    <span>Top 2% among +160,000 participants in the national university entrance exam</span>
+    <span>2017</span>
+  </li>
+</ul>
+
+<div class="mb-5 technical-skills-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Technical Skills</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<div class="mx-6">
+  <div class="skills-container">
+    <div class="skill-box" style="background-color: #e0f7fa;">Python</div>
+    <div class="skill-box" style="background-color: #e0f7fa;">NumPy</div>
+    <div class="skill-box" style="background-color: #e0f7fa;">Git</div>
+    <div class="skill-box" style="background-color: #e0f7fa;">PyTorch</div>
+    <div class="skill-box" style="background-color: #e0f7fa;">pandas</div>
+    <div class="skill-box" style="background-color: #e0f7fa;">Docker</div>
+    <div class="skill-box" style="background-color: #e0f7fa;">sklearn</div>
+    <div class="skill-box" style="background-color: #e0f7fa;">FastAPI</div>
+  </div>
+</div>
+
+<style>
+  .skills-container {
+    display: flex;
+    gap: 10px;
+  }
+  .skill-box {
+    background-color: #e0f7fa; /* New color */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+
+
+<div class="mb-5 software-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Software</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;">
+</div>
+<ul class="list-disc mx-6">
+  <li style="display: inline-block; width: 48%;">SolidWorks (high-intermediate)</li>
+  <li style="display: inline-block; width: 48%;">ANSYS Fluent (intermediate)</li>
+  <li style="display: inline-block; width: 48%;">MATLAB (low-intermediate)</li>
+  <li style="display: inline-block; width: 48%;">ANSYS Workbench (low-intermediate)</li>
+</ul>
+
+
+
+<div class="mb-5 languages-section" style="margin-top: 50px;">
+  <div class="text-3xl w-full font-bold">Languages</div>
+  <hr style="margin-top: 10px; border: 2px solid blue;"> <!-- Adjust the margin and border thickness as needed -->
+</div>
+<div class="mx-6">
+  <ul class="list-disc">
+    <ul class="list-disc">
+      <li style="display: flex; justify-content: space-between; list-style-position: inside;">
+        <span>English: IELTS Academic Test: 7.5 (Listening: 8, Reading: 8.5, Writing: 6.5, Speaking: 6.5)</span>
+        <span>August 23, 2024</span>
+      </li>
+      <li style="display: flex; justify-content: space-between; list-style-position: inside;">
+        <span>Persian: Native</span>
+      </li>
+    </ul>    
+</div>
+
+</BaseLayout>
