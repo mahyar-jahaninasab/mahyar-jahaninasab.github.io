@@ -1,8 +1,8 @@
 ---
 title: "Closing a Chapter, Opening a New One"
-date: 2025-07-20
+pubDate: 2025-07-20
 description: "Reflecting on my journey as an AI Software Engineer at Solico Group and announcing my next step as an AI Researcher at Monash University."
-heroImage: "/adapter.webp"
+heroImage: "/work.webp"
 tags: [AI, Career, Research, Machine Learning, LLM, RAG]
 ---
 
