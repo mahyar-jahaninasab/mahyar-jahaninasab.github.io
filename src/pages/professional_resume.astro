@@ -1,131 +1,215 @@
 ---
+import SectionHeader from "../components/cv/SectionHeader.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="professional_resume">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
-    <hr style="margin-top: 10px; border: 2px solid blue;">
-  </div>
-  <div class="mb-10 text-justify">
-    AI researcher and developer specializing in scientific machine learning. Proven track record in advancing algorithmic innovation. Expert in designing and optimizing AI models, enhancing predictive modeling, and leading cross-functional projects. Committed to using AI to solve complex challenges.
+  
+  <SectionHeader title="Profile" />
+  <div class="mb-10 text-justify text-slate-300">
+    AI Software Engineer and researcher specializing in Deep Learning, scientific machine learning, and AI agents. Experienced in deploying scalable AI pipelines, optimizing deep learning architectures, and building end-to-end production-ready solutions. Strong background in bridging theory and practice by advancing algorithmic research and deploying real-world AI systems for business impact.
   </div>
   
-
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
-    <hr style="margin-top: 10px; border: 2px solid blue;">
-  </div>
-  <div class="time-line-container mb-10">
+  <SectionHeader title="Experience" />
+  <div class="timeline-container mb-10">
     <TimeLineElement
-      title="Research and Deployment of Machine Learning Models"
-      subtitle="From 2024 to 2025 at Steel Manufacturing, led by Dr. Shafii."
+      title="AI Software Engineer"
+      subtitle="Nov 2024 – Jul 2025 | Solico Group / Zhinto (Startup Initiative), Hybrid"
     >
-      Responsible for developing and deploying predictive models, optimizing algorithms, and collaborating with cross-functional teams to enhance project outcomes.
+      <ul class="list-disc ml-5 space-y-2">
+        <li>Developed a fully concurrent pipeline integrating state-of-the-art Retrieval-Augmented Generation (RAG) techniques with vector databases, boosting retrieval speed by 80%.</li>
+        <li>Designed and deployed an end-to-end production-ready API with FastAPI, ensuring scalability and seamless integration of chatbot solutions.</li>
+        <li>Built multilingual data collection pipelines for fine-tuning embedding models, reducing warm-up time to &lt;1s on a single A100 GPU.</li>
+        <li>Fine-tuned and pruned a distilled LLM, deployed on a custom server with 5 RPS sustained throughput on a single A100 GPU, enabling low-latency streaming for B2B applications.</li>
+        <li>Developed LLM-powered AI agents for automating e-commerce workflows, including SKU management and personalized recommendations based on client intent and prior chat history.</li>
+        <li>Led fine-tuning of a vision-language OCR model for handwritten and printed invoices, enabling automatic SKU extraction and shopping basket population.</li>
+        <li>Contributed to voice-to-text and text-to-voice model pipelines by designing data monitoring systems and fine-tuning processes to ensure dataset quality.</li>
+      </ul>
     </TimeLineElement>
   </div>
 
-
-
-  <div class="mb-5 skills-section" style="margin-top: 50px;">
-    <div class="text-3xl w-full font-bold">Skills</div>
-    <hr style="margin-top: 10px; border: 2px solid blue;">
+  <SectionHeader title="Projects" />
+  <div class="timeline-container mb-10">
+    <TimeLineElement title="Scalable Data Collection & Processing Pipeline for LLM Training">
+      <p class="mb-2">Engineered a high-throughput data ingestion pipeline for LLM training that performs online quality control, tokenization, and Parquet sharding. It leverages Hugging Face Datasets (streaming), asyncio, and PyArrow for efficient ingestion with robust checkpointing.</p>
+      <a href="https://github.com/mahyar-jahaninasab/data_pipeline/tree/main/" class="text-teal-400 hover:underline">View on GitHub</a>
+    </TimeLineElement>
+    <TimeLineElement title="AI Science & Deep Learning Implementations">
+       <ul class="list-disc ml-5 space-y-2">
+        <li>Implemented and benchmarked generative models from scratch (VAEs, GANs, DDPMs), quantifying the superior image generation of diffusion models.</li>
+        <li>Patched the RoBERTa repository to add adapter support, achieving faster convergence and higher training accuracy.</li>
+        <li>Engineered an image captioning system by integrating ViT and DistilGPT-2, and re-implemented underlying transformer modules from scratch.</li>
+        <li>Implemented BYOL self-supervised learning, verifying improved classification accuracy on downstream tasks after pretraining.</li>
+        <li>Conducted zero-shot object recognition experiments using OpenAI's CLIP model.</li>
+      </ul>
+      <a href="https://github.com/mahyar-jahaninasab/DL_codes" class="text-teal-400 hover:underline mt-2 inline-block">View on GitHub</a>
+    </TimeLineElement>
   </div>
-  <div class="mx-6">
-    <div class="skills-container">
-      <div class="skill-box" style="background-color: #e7f0fe;">Python</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">NumPy</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">Git</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">PyTorch</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">pandas</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">Docker</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">sklearn</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">FastAPI</div>
-      <div class="skill-box" style="background-color: #e7f0fe;">English (IELTS 7.5)</div>
+
+  <SectionHeader title="Skills" />
+  <div class="mb-10">
+    <div class="skills-category">
+      <h3 class="font-semibold text-lg text-slate-200 mb-2">Languages & Databases</h3>
+      <div class="skills-container">
+        <div class="skill-box">Python</div>
+        <div class="skill-box">SQL</div>
+        <div class="skill-box">Vector DBs</div>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h3 class="font-semibold text-lg text-slate-200 mb-2">Frameworks & Libraries</h3>
+      <div class="skills-container">
+        <div class="skill-box">PyTorch</div>
+        <div class="skill-box">Hugging Face</div>
+        <div class="skill-box">FastAPI</div>
+        <div class="skill-box">NumPy / Pandas</div>
+        <div class="skill-box">PyArrow</div>
+        <div class="skill-box">asyncio</div>
+      </div>
+    </div>
+    <div class="skills-category">
+      <h3 class="font-semibold text-lg text-slate-200 mb-2">Tools & Platforms</h3>
+      <div class="skills-container">
+        <div class="skill-box">Docker</div>
+        <div class="skill-box">Git</div>
+        <div class="skill-box">AWS</div>
+        <div class="skill-box">Linux</div>
+      </div>
     </div>
   </div>
-  
-  <style>
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skill-box {
-      background-color: #e7f0fe; /* Professional blue shade */
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 10px;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-      width: auto; /* Adjust width as needed */
-    }
-  </style>
 
-<div class="mb-5 education-section" style="margin-top: 50px;">
-  <div class="text-3xl w-full font-bold">Related AI Projects</div>
-  <hr style="margin-top: 10px; border: 2px solid blue;">
-</div>
-<div class="mx-6">
-  <div class="education-container">
-    <ul class="list-disc">
-      <li>Improving Physics-Informed Neural Network (PINN) algorithm by increasing convergence probability and reducing training time by 2x. <a href="https://github.com/mahyar-jahaninasab/Feature-Enforcing-PINN"><strong>Link</strong></a></li>
-      <li>Three generative models were built from scratch—Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), and Denoising Diffusion Probabilistic Models (DDPMs). The results demonstrate the superior performance of DDPMs in generating new images, outperforming the other two models. <a href="https://github.com/mahyar-jahaninasab/DL_codes/tree/main/Generative_models"><strong>Link</strong></a></li>
-      <li>A patch was created to add an adapter to the RoBERTa repository, resulting in improved training accuracy and faster convergence speed. <a href="https://github.com/mahyar-jahaninasab/DL_codes/tree/main/Transformers/adapter-patch"><strong>Link</strong></a></li>
-      <li>Applied beam search generation and truncated both inputs and targets to a fixed length for backpropagation, training a character RNN language model on the Harry Potter book series. <a href="https://github.com/mahyar-jahaninasab/DL_codes/tree/main/Transformers"><strong>Link</strong></a></li>
-      <li>Implemented image captioning using Hugging Face models by combining the Vision Transformer (ViT) model and the DistilGPT-2 model, and rewriting transformers from scratch. <a href="https://github.com/mahyar-jahaninasab/DL_codes/tree/main/Transformers"><strong>Link</strong></a></li>
-      <li>The BYOL (Bootstrap Your Own Latent) method was implemented to compare the results of a classification task before and after pretraining the model with BYOL, demonstrating an improvement in the training process. <a href="https://github.com/mahyar-jahaninasab/DL_codes/blob/main/self-supervised/BYOL.ipynb"><strong>Link</strong></a></li>
-      <li>OpenAI's CLIP (Contrastive Language-Image Pretraining) model was used for zero-shot learning in recognizing objects. <a href="https://github.com/mahyar-jahaninasab/DL_codes/blob/main/self-supervised/CLIP_ObjectDetection.ipynb"><strong>Link</strong></a></li>
-      <li>Developed an image classification project using a CNN in PyTorch and a U-Net for semantic segmentation on the CARLA dataset with sparse categorical cross-entropy. <a href="https://github.com/mahyar-jahaninasab/DL_codes/tree/main/CNN"><strong>Link</strong></a></li>
+  <SectionHeader title="Related Publications" />
+  <div class="mb-10 publication-container">
+    <ul class="space-y-3">
+      <li><a href="https://link.springer.com/article/10.1007/s00466-025-02691-5"><strong>Revising the Structure of Recurrent Neural Networks to Eliminate Numerical Derivatives in Physics-Informed Loss Terms with Respect to Time.</strong> <i>arXiv preprint (2024).</i></a></li>
+      <li><a href="https://doi.org/10.1038/s41598-024-23836-4"><strong>Enhancing convergence speed with feature enforcing physics-informed neural networks using boundary conditions as prior knowledge.</strong> <i>Scientific Reports (2024).</i></a></li>
     </ul>
   </div>
-</div>
 
-
-
-
-<div class="mb-5 education-section" style="margin-top: 50px;">
-  <div class="text-3xl w-full font-bold">Related Publications</div>
-  <hr style="margin-top: 10px; border: 2px solid blue;">
-</div>
-<div class="mx-6">
-  <div class="education-container">
-    <div class="flex justify-between items-center">
-      <div>
-        <a href="https://arxiv.org/abs/2409.10388" target="_blank">
-          <strong>Mahyar Jahani-nasab</strong>, and Mohamad Ali Bijarchi. "Revising the Structure of Recurrent Neural Networks to Eliminate Numerical Derivatives in Forming Physics Informed Loss Terms with Respect to Time." arXiv preprint arXiv:2409.10388 (2024).
-        </a>
-      </div>
-    </div>
+  <SectionHeader title="Education" />
+  <div class="timeline-container mb-10">
+    <TimeLineElement
+      title="Ph.D. in Artificial Intelligence and Data Science"
+      subtitle="2025 – Present | Monash University, Melbourne, Australia"
+    >
+      Thesis: Building and enhancing AI agents through Neuro-Symbolic and physics-informed machine learning.
+    </TimeLineElement>
+    <TimeLineElement
+      title="M.Sc. in Scientific Machine Learning"
+      subtitle="2024 | Sharif University of Technology, Tehran, Iran"
+    >
+      Research-based Master's focused on the mutual application of computer science and engineering principles.
+    </TimeLineElement>
+    <TimeLineElement
+      title="B.Sc. in Engineering"
+      subtitle="2022 | Imam Khomeini International University, Qazvin, Iran"
+    >
+      Specialization in Robotics.
+    </TimeLineElement>
   </div>
-</div>
-<div class="mb-5 education-section" style="margin-top: 50px;">
-  <div class="text-3xl w-full font-bold">Education</div>
-  <hr style="margin-top: 10px; border: 2px solid blue;">
-</div>
-<div class="mx-6">
-  <div class="education-container">
-    <div class="flex justify-between items-center">
-      <div>
-        <h3 class="text-xl font-semibold">M.Sc. in Mechanical Engineering</h3>
-        <p>Sharif University of Technology, Tehran, Iran</p>
-        <p>Minor: Scientific Machine Learning</p>
-      </div>
-      <div class="text-right">
-        <p>2024</p>
-      </div>
-    </div>
-    <div class="flex justify-between items-center">
-      <div>
-        <h3 class="text-xl font-semibold">B.Sc. in Mechanical Engineering</h3>
-        <p>Imam Khomeini International University, Qazvin, Iran</p>
-      </div>
-      <div class="text-right">
-        <p>2022</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 </BaseLayout>
+
+<style is:global>
+  :root {
+    --primary-color: #38bdf8; /* Light Blue */
+    --secondary-color: #2dd4bf; /* Teal */
+    --background-color: #1e293b; /* Slate-800 */
+    --card-color: #334155; /* Slate-700 */
+    --border-color: #475569; /* Slate-600 */
+    --text-color: #cbd5e1; /* Slate-300 */
+    --heading-color: #f1f5f9; /* Slate-100 */
+  }
+
+  /* --- Section Header Component --- */
+  .section-header-title {
+    color: var(--heading-color);
+  }
+  .section-header-hr {
+    border: 1px solid var(--primary-color);
+    width: 50px;
+    margin-top: 8px;
+  }
+
+  /* --- Timeline Visualization --- */
+  .timeline-container {
+    position: relative;
+    padding-left: 30px; /* Space for the timeline line and dots */
+  }
+
+  /* The vertical line of the timeline */
+  .timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background-color: var(--border-color);
+  }
+
+  /* The dot on the timeline for each element */
+  .timeline-element::before {
+    content: '';
+    position: absolute;
+    left: -30px; /* Position dot on the timeline line */
+    top: 10px; 
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--background-color);
+    z-index: 10;
+  }
+  .timeline-element {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 15px; /* Space between dot and content */
+    color: var(--text-color);
+  }
+  .timeline-element h3 { color: var(--heading-color); }
+  .timeline-element h4 { color: var(--text-color); opacity: 0.8; }
+
+
+  /* --- Skills Section --- */
+  .skills-category {
+    margin-bottom: 2rem;
+  }
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .skill-box {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+  }
+  .skill-box:hover {
+    transform: translateY(-3px);
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    box-shadow: 0 4px 10px rgba(45, 212, 191, 0.2);
+  }
+
+  /* --- Publications Section --- */
+  .publication-container a {
+    color: var(--text-color);
+    transition: color 0.2s;
+  }
+  .publication-container a:hover {
+    color: var(--secondary-color);
+  }
+  .publication-container a strong {
+    color: var(--heading-color);
+  }
+  .publication-container a i {
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+</style>
