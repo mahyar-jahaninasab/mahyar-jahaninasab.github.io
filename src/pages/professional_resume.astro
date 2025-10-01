@@ -130,13 +130,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style is:global>
   :root {
-    --primary-color: #000000; /* Light Blue */
-    --secondary-color: #2dd4bf; /* Teal */
-    --background-color: #030000; /* Slate-800 */
-    --card-color: #909aaa; /* Slate-700 */
-    --border-color: #000000; /* Slate-600 */
-    --text-color: #000000; /* Slate-300 */
-    --heading-color: #000000; /* Slate-100 */
+    --primary-color: #1F2937;      /* Dark Slate Gray for strong contrast */
+    --secondary-color: #3B82F6;    /* Bright Blue accent */
+    --accent-color: #F59E0B;       /* Vivid Amber for highlights */
+    --background-color: #F9FAFB;   /* Very Light Gray for readability */
+    --card-color: #FFFFFF;         /* Pure White for cards */
+    --border-color: #E5E7EB;       /* Light Gray borders */
+    --text-color: #111827;         /* Almost Black for body text */
+    --heading-color: #1E40AF;      /* Deep Indigo for headings */
   }
 
   /* --- Section Header Styling --- */
@@ -144,47 +145,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     color: var(--heading-color);
   }
   .section-header-hr {
-    border: 1px solid var(--primary-color);
-    width: 50px;
+    border: 2px solid var(--accent-color);
+    width: 60px;
     margin-top: 8px;
   }
 
   /* --- Timeline Visualization --- */
   .timeline-container {
     position: relative;
-    padding-left: 30px; /* Space for the timeline line and dots */
+    padding-left: 30px;
   }
-
   .timeline-container::before {
     content: '';
     position: absolute;
     left: 0;
     top: 10px;
     bottom: 10px;
-    width: 2px;
+    width: 3px;
     background-color: var(--border-color);
   }
-
   .timeline-element::before {
     content: '';
     position: absolute;
-    left: -30px; 
-    top: 10px; 
-    width: 12px;
-    height: 12px;
+    left: -30px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background-color: var(--secondary-color);
-    border: 2px solid var(--background-color);
+    border: 3px solid var(--background-color);
     z-index: 10;
   }
   .timeline-element {
     position: relative;
     margin-bottom: 2rem;
-    padding-left: 15px; 
+    padding-left: 15px;
     color: var(--text-color);
   }
-  .timeline-element h3 { color: var(--heading-color); }
-  .timeline-element h4 { color: var(--text-color); opacity: 0.8; }
+  .timeline-element h3 {
+    color: var(--heading-color);
+  }
+  .timeline-element h4 {
+    color: var(--text-color);
+    opacity: 0.8;
+  }
 
   /* --- Skills Section --- */
   .skills-category {
@@ -208,7 +212,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     transform: translateY(-3px);
     background-color: var(--secondary-color);
     color: var(--background-color);
-    box-shadow: 0 4px 10px rgba(45, 212, 191, 0.2);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
   }
 
   /* --- Publications Section --- */
@@ -217,9 +221,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     transition: color 0.2s;
   }
   .publication-container a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
   }
   .publication-container a strong {
     color: var(--heading-color);
   }
 </style>
+
